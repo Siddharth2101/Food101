@@ -6,25 +6,26 @@ import cv2
 model = tf.keras.models.load_model('KIRAnet.h5')
 
 label_map = {
-    0: "Shayad Burger hai",
-    1: "Shayad Naan hai",
-    2: "Shayad Chai hai",
-    3: "Shayad Roti hai",
-    4: "Shayad Chole Bhature hai",
-    5: "Shayad Dal hai",
-    6: "Shayad Dhokla hai",
-    7: "Shayad Namkeen hai",
-    8: "Shayad Idly hai",
-    9: "Shayad Jalebi hai",
-    10: "Shayad Spring Roll hai",
-    11: "Shayad koi Sabji hai",
-    12: "Shayad Kulfi hai",
-    13: "Shayad Dosa hai",
-    14: "Shayad Pakode hai",
-    15: "Shayad Puchke hai",
-    16: "Shayad Pav Bhaji hai",
-    17: "Shayad Pizza hai",
-    18: "Shayad Samosa hai"
+    0: "shayad burger hai",
+    1: "shayad naan hai",
+    2: "shayad chai hai",
+    3: "shayad roti hai",
+    4: "shayad chole bhature hai",
+    5: "shayad dal hai",
+    6: "shayad dhokla hai",
+    7: "shayad namkeen hai",
+    8: "shayad idly hai",
+    9: "shayad jalebi hai",
+    10: "shayad spring Roll hai",
+    11: "shayad koi sabji hai",
+    12: "shayad kulfi hai",
+    13: "shayad dosa hai",
+    14: "shayad momo's hai"
+    16: "shayad pakode hai",
+    15: "shayad puchke hai",
+    17: "shayad pav Bhaji hai",
+    18: "shayad pizza hai",
+    19: "shayad samosa hai"
 }
 
 
@@ -63,7 +64,7 @@ if uploaded_file is not None:
 
     predicted_label, confidence, probabilities = predict_label(image_rgb, model, label_map)
 
-    st.write(f"**KIRAnet ke hisaab se ye {predicted_label} aur hone ke chances {confidence:.2f}% hai.**")
+    st.write(f"KIRAnet ke hisaab se ye {predicted_label})
 
     st.write("### Probabilities:")
     for idx, probability in enumerate(probabilities):
